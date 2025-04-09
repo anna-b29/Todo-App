@@ -1,0 +1,61 @@
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Sofia"
+      rel="stylesheet"
+    />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <h1>Meine Todo App</h1>
+    </header>
+
+    <!-- Inhalt der Seite -->
+    <div class="content">
+      <!-- Datumanzeige -->
+      <div class="date" id="date">
+        <script>
+          document.getElementById("date").innerHTML = "Datum: " + Date();
+        </script>
+      </div>
+
+      <!-- Aufgabenbereich -->
+      <div class="task-container">
+        <h2>to-do's</h2>
+        <!-- Seperator -->
+        <hr class="rounded" />
+
+        <!-- Aufgabenliste -->
+        <div class="taskList-container">
+          <ul id="taskList"></ul>
+        </div>
+
+        <!-- Inputfeld mit Button -->
+        <div class="input-container">
+          <input
+            type="text"
+            class="taskInput"
+            id="taskInput"
+            placeholder="Neue Aufgabe hinzufügen..."
+          />
+          <button class="addBtn" onclick="addTask()">Hinzufügen</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Betätigung mit Enter -->
+    <script>
+      document.getElementById("taskInput").addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          addTask();
+        }
+      });
+    </script>
+  </body>
+</html>
